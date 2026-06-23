@@ -92,6 +92,17 @@ const projects = [
     image: "/projects/partition.png",
     portalColor: "from-purple-500/20 to-purple-900/20",
     glowColor: "group-hover:shadow-[0_0_40px_rgba(168,85,247,0.3)] border-purple-500/30"
+  },
+  {
+    title: "ParkWise",
+    category: "System Application",
+    description: "A dynamic parking system designed to calculate fees based on vehicle type, parking duration, and additional minutes. Utilizes core Object-Oriented principles like polymorphism to flexibly handle different vehicle types such as Motorbikes, Sedans, and SUVs.",
+    tech: ["OOP", "Polymorphism", "Software Design"],
+    github: "https://github.com/CryoYohan/ParkWise-Parking_System_Application",
+    isPrivate: false,
+    image: "/projects/park-wise.png",
+    portalColor: "from-rose-500/20 to-rose-900/20",
+    glowColor: "group-hover:shadow-[0_0_40px_rgba(244,63,94,0.3)] border-rose-500/30"
   }
 ]
 
