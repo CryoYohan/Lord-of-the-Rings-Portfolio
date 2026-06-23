@@ -21,8 +21,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "The Tech Adventurer | 3D Portfolio",
-  description: "A cinematic 3D journey through code, creativity, and innovation.",
+  title: "The Realm of Ar-Cryoyohan",
+  description: "The digital portfolio of Cyril John T. Ypil, a data-driven strategist, proactive problem solver, and Magna Cum Laude IT graduate.",
 };
 
 export default function RootLayout({
