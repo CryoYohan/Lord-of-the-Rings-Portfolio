@@ -50,9 +50,12 @@ export default function Hero() {
           transition={{ duration: 1.5, delay: 1.5 }}
           className="mt-10 flex gap-6 pointer-events-auto"
         >
-          <button className="px-8 py-3 bg-emerald-500/10 border border-emerald-500 text-emerald-500 rounded-sm hover:bg-emerald-500 hover:text-slate-950 transition-all duration-300 font-serif tracking-wider shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.6)]">
+          <a href="#about">
+            <button className="px-8 py-3 bg-emerald-500/10 border border-emerald-500 text-emerald-500 rounded-sm hover:bg-emerald-500 hover:text-slate-950 transition-all duration-300 font-serif tracking-wider shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.6)]">
             Enter the Journey
           </button>
+          </a>
+
         </motion.div>
       </div>
 
