@@ -12,9 +12,20 @@ const projects = [
     tech: ["Python", "IoT", "AI Models", "GCP"],
     github: "https://github.com/CryoYohan/EnerGreen-AI-Powered-and-IoT-Based-Green-Energy-Consumption-Monitoring-System",
     isPrivate: false,
-    image: "/projects/energreen.jpg", // Create a 'projects' folder in 'public'
+    image: "/projects/energreen.JPEG", // Create a 'projects' folder in 'public'
     portalColor: "from-emerald-500/20 to-emerald-900/20",
     glowColor: "group-hover:shadow-[0_0_40px_rgba(16,185,129,0.3)] border-emerald-500/30"
+  },
+  {
+    title: "CurrenSee",
+    category: "AI & IoT Assistive Device",
+    description: "A smart, low-cost device designed to help visually impaired individuals identify paper money and coins. Features real-time AI inference via a camera module, processed by an ESP32 microcontroller to provide instant audio feedback.",
+    tech: ["ESP32-CAM", "AI Inference", "Hardware", "Audio Feedback"],
+    github: "#",
+    isPrivate: true,
+    image: "/projects/currensee.JPEG", // Don't forget to add currensee.jpg to your public/projects folder!
+    portalColor: "from-yellow-500/20 to-yellow-900/20",
+    glowColor: "group-hover:shadow-[0_0_40px_rgba(234,179,8,0.3)] border-yellow-500/30"
   },
   {
     title: "Lamoy",
@@ -23,7 +34,7 @@ const projects = [
     tech: ["React.js", "ASP.NET Core", "PostgreSQL"],
     github: "https://github.com/CryoYohan/Lamoy-Simple-Food-Ordering-System",
     isPrivate: false,
-    image: "/projects/lamoy.jpg",
+    image: "/projects/lamoy.JPEG",
     portalColor: "from-orange-500/20 to-orange-900/20",
     glowColor: "group-hover:shadow-[0_0_40px_rgba(249,115,22,0.3)] border-orange-500/30"
   },
@@ -45,7 +56,7 @@ const projects = [
     tech: ["Python", "Turtle", "OOP"],
     github: "https://github.com/CryoYohan/Snake-Game-Python",
     isPrivate: false,
-    image: "/projects/snake.jpg",
+    image: "/projects/snake.png",
     portalColor: "from-green-500/20 to-green-900/20",
     glowColor: "group-hover:shadow-[0_0_40px_rgba(34,197,94,0.3)] border-green-500/30"
   },
@@ -56,7 +67,7 @@ const projects = [
     tech: ["Web Tech", "Data Analytics", "Simulation"],
     github: "https://github.com/CryoYohan/GreenEnergyConsumptionMonitoringWebApp",
     isPrivate: false,
-    image: "/projects/energreen-v1.jpg",
+    image: "/projects/energreen-v1.png",
     portalColor: "from-teal-500/20 to-teal-900/20",
     glowColor: "group-hover:shadow-[0_0_40px_rgba(20,184,166,0.3)] border-teal-500/30"
   },
@@ -67,7 +78,7 @@ const projects = [
     tech: ["Java", "Desktop App", "UI/UX"],
     github: "https://github.com/CryoYohan/LodgeFinder",
     isPrivate: false,
-    image: "/projects/lodge-finder.jpg",
+    image: "/projects/lodge-finder.png",
     portalColor: "from-indigo-500/20 to-indigo-900/20",
     glowColor: "group-hover:shadow-[0_0_40px_rgba(99,102,241,0.3)] border-indigo-500/30"
   },
@@ -78,7 +89,7 @@ const projects = [
     tech: ["C#", "OS Concepts", "Algorithms"],
     github: "https://github.com/CryoYohan/Fixed-Partition-Simulation",
     isPrivate: false,
-    image: "/projects/partition.jpg",
+    image: "/projects/partition.png",
     portalColor: "from-purple-500/20 to-purple-900/20",
     glowColor: "group-hover:shadow-[0_0_40px_rgba(168,85,247,0.3)] border-purple-500/30"
   }
