@@ -6,6 +6,93 @@ import { Award, Shield, Brain, Database, Code, Terminal } from 'lucide-react'
 // The collected seals and credentials
 const certifications = [
   {
+    title: "Networking Basics",
+    issuer: "Cisco",
+    date: "Issued Jul 2026",
+    icon: <Shield size={24} className="text-orange-400" />,
+    glow: "border-orange-400/30 group-hover:shadow-[0_0_30px_rgba(251,146,60,0.2)]"
+  },
+  {
+    title: "Learning Linux Basics Course & Labs",
+    issuer: "KodeKloud",
+    date: "Issued Jul 2026",
+    credentialId: "862ac7cb-fe5e-4c5b-a3ce-b062c2a1859c",
+    icon: <Terminal size={24} className="text-emerald-500" />,
+    glow: "border-emerald-500/30 group-hover:shadow-[0_0_30px_rgba(16,185,129,0.2)]"
+  },
+  {
+    title: "KodeKloud Engineer - Linux (Level 1)",
+    issuer: "KodeKloud",
+    date: "Issued Jul 2026",
+    credentialId: "a806fac7-5a52-408b-8f7e-8aa0a0b30f8c",
+    icon: <Terminal size={24} className="text-slate-300" />,
+    glow: "border-slate-400/30 group-hover:shadow-[0_0_30px_rgba(148,163,184,0.2)]"
+  },
+  {
+    title: "GIT for Beginners",
+    issuer: "KodeKloud",
+    date: "Issued Jul 2026",
+    credentialId: "b824680c-74f7-4839-aacf-888418492d79",
+    icon: <Code size={24} className="text-orange-400" />,
+    glow: "border-orange-400/30 group-hover:shadow-[0_0_30px_rgba(251,146,60,0.2)]"
+  },
+  {
+    title: "KodeKloud Engineer - Git (Level 1)",
+    issuer: "KodeKloud",
+    date: "Issued Jul 2026",
+    credentialId: "090781b3-7952-4185-985a-6f70da943267",
+    icon: <Code size={24} className="text-purple-400" />,
+    glow: "border-purple-400/30 group-hover:shadow-[0_0_30px_rgba(168,85,247,0.2)]"
+  },
+  {
+    title: "Python Basics",
+    issuer: "KodeKloud",
+    date: "Issued Jul 2026",
+    credentialId: "b4bbf0ee-8226-421f-9558-eff7b6be20a8",
+    icon: <Code size={24} className="text-yellow-400" />,
+    glow: "border-yellow-400/30 group-hover:shadow-[0_0_30px_rgba(250,204,21,0.2)]"
+  },
+  {
+    title: "Docker Training Course for the Absolute Beginner",
+    issuer: "KodeKloud",
+    date: "Issued Jul 2026",
+    credentialId: "f4be9b56-207d-4fc3-9e68-1669ca8683b5",
+    icon: <Database size={24} className="text-blue-400" />,
+    glow: "border-blue-400/30 group-hover:shadow-[0_0_30px_rgba(96,165,250,0.2)]"
+  },
+  {
+    title: "KodeKloud Engineer - Docker (Level 1)",
+    issuer: "KodeKloud",
+    date: "Issued Aug 2026",
+    credentialId: "8f9080ac-0524-4c1c-8ec6-7b7d902473e9",
+    icon: <Database size={24} className="text-cyan-400" />,
+    glow: "border-cyan-400/30 group-hover:shadow-[0_0_30px_rgba(34,211,238,0.2)]"
+  },
+  {
+    title: "KodeKloud Engineer - Cloud (AWS) (Level 1)",
+    issuer: "KodeKloud",
+    date: "Issued Aug 2026",
+    credentialId: "abe87b1d-7c59-49af-8dca-857157e2144d",
+    icon: <Award size={24} className="text-yellow-500" />,
+    glow: "border-yellow-500/30 group-hover:shadow-[0_0_30px_rgba(251,191,36,0.2)]"
+  },
+  {
+    title: "KodeKloud Engineer - Kubernetes (Level 1)",
+    issuer: "KodeKloud",
+    date: "Issued Aug 2026",
+    credentialId: "7303d6c2-4382-41e9-8b6c-216d4d45c42d",
+    icon: <Database size={24} className="text-blue-400" />,
+    glow: "border-blue-400/30 group-hover:shadow-[0_0_30px_rgba(96,165,250,0.2)]"
+  },
+  {
+    title: "AWS EKS",
+    issuer: "KodeKloud",
+    date: "Issued Aug 2026",
+    credentialId: "7b58ee7c-932a-4892-abec-ab27cbfa6c67",
+    icon: <Award size={24} className="text-orange-400" />,
+    glow: "border-orange-400/30 group-hover:shadow-[0_0_30px_rgba(251,146,60,0.2)]"
+  },
+  {
     title: "IT Passport",
     issuer: "PhilNITS",
     date: "Issued Jun 2026",

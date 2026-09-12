@@ -6,6 +6,14 @@ import { Briefcase, GraduationCap, Award, Users } from 'lucide-react'
 // The Milestones of Your Journey
 const experiences = [
   {
+    role: "Site Reliability Engineer Intern",
+    entity: "Opswerks",
+    date: "Jun 2026 - September 2026 · Remote",
+    icon: <Briefcase size={20} className="text-yellow-500" />,
+    description: "Completed a fast-paced weekly training program covering Linux, Git, Python, Docker, AWS, Kubernetes, and AWS EKS—consistently maintaining an 85% passing rate—while successfully leveraging these technical competencies to resolve complex Site Reliability Engineering (SRE) incidents under highly time-constrained, real-life simulator scenarios.",
+    glow: "border-yellow-500/30 group-hover:shadow-[0_0_30px_rgba(251,191,36,0.3)]"
+  },
+  {
     role: "Data Scientist Intern",
     entity: "Talleco",
     date: "Jan 2026 - May 2026 · Hybrid",
