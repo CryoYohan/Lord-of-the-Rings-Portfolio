@@ -5,10 +5,12 @@ import Projects from "@/components/sections/Projects";
 import Experience from "@/components/sections/Experience";
 import Certifications from "@/components/sections/Certifications"; // Import the new section
 import Contact from "@/components/sections/Contact";
+import RealmNav from "@/components/layout/RealmNav";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main id="top" className="flex min-h-screen flex-col items-center">
+      <RealmNav />
       <Hero />
       <About />
       <Skills />

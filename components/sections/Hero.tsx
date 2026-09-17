@@ -3,69 +3,68 @@
 import { Canvas } from '@react-three/fiber'
 import { Environment, PerspectiveCamera } from '@react-three/drei'
 import { motion } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
+import { ArrowDown, ArrowRight } from 'lucide-react'
 import MagicalRing from '@/components/3d/MagicalRing'
 
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative flex min-h-screen w-full items-center overflow-hidden border-b border-amber-200/10" aria-label="Introduction">
       {/* 3D Canvas Background */}
       <div className="absolute inset-0 z-0">
-        <Canvas>
+        <Canvas dpr={[1, 1.5]}>
           <PerspectiveCamera makeDefault position={[0, 0, 8]} />
           <ambientLight intensity={0.2} />
           {/* Emerald point light to match your theme */}
-          <pointLight position={[10, 10, 10]} intensity={1} color="#10B981" />
+          <pointLight position={[10, 10, 10]} intensity={1.5} color="#c7a44d" />
           <Environment preset="night" />
           {/* Mist/Fog effect fading into the background color */}
-          <fog attach="fog" args={['#020617', 5, 15]} />
+          <fog attach="fog" args={['#0b1710', 5, 15]} />
           <MagicalRing />
         </Canvas>
       </div>
 
       {/* Foreground UI Overlay */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-20 pointer-events-none">
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col justify-center px-6 pt-24 md:px-12 pointer-events-none">
+        <div className="max-w-3xl text-left">
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, delay: 0.5 }}
-          className="text-5xl md:text-7xl font-serif text-slate-200 drop-shadow-2xl"
+          className="max-w-3xl font-serif text-5xl leading-[1.05] text-amber-50 drop-shadow-2xl md:text-8xl"
         >
-          One Journey.<br/>
-          <span className="text-yellow-500">Endless Possibilities.</span>
+          Digital craft for<br/>
+          <span className="text-amber-300">the road ahead.</span>
         </motion.h1>
         
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, delay: 1 }}
-          className="mt-6 text-lg md:text-xl text-slate-400 font-sans max-w-2xl"
+          className="mt-7 max-w-xl border-l border-amber-300/50 pl-5 font-sans text-base leading-relaxed text-amber-100/65 md:text-lg"
         >
-          Building digital worlds through code, creativity, and innovation.
+          I&apos;m Cyril John T. Ypil, a data-driven developer and problem solver building useful systems across cloud, software, and intelligent automation.
         </motion.p>
 
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, delay: 1.5 }}
-          className="mt-10 flex gap-6 pointer-events-auto"
+          className="mt-10 flex flex-wrap gap-4 pointer-events-auto"
         >
-          <a href="#about">
-            <button className="px-8 py-3 bg-emerald-500/10 border border-emerald-500 text-emerald-500 rounded-sm hover:bg-emerald-500 hover:text-slate-950 transition-all duration-300 font-serif tracking-wider shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.6)]">
-            Enter the Journey
-          </button>
-          </a>
+          <a href="#projects" className="gold-button">Explore the works <ArrowRight size={16} /></a>
+          <a href="#about" className="ghost-button">Read the story</a>
 
         </motion.div>
+        </div>
       </div>
 
       {/* Animated Scroll Indicator */}
       <motion.div 
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-yellow-500 z-10"
+        className="absolute bottom-8 left-6 z-10 flex items-center gap-3 text-xs uppercase tracking-[.25em] text-amber-200/50 md:left-12"
       >
-        <ChevronDown size={32} />
+        <ArrowDown size={18} /> Scroll to wander
       </motion.div>
     </section>
   )

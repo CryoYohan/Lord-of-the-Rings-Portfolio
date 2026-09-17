@@ -44,7 +44,7 @@ export default function RootLayout({
       )}
     >
       {/* Set the deep, near-black background */}
-      <body className="min-h-full flex flex-col bg-[#020617] text-slate-200">
+      <body className="min-h-full flex flex-col bg-[#0b1710] text-amber-50">
         <SmoothScroll>
           {children}
         </SmoothScroll>

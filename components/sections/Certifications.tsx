@@ -157,7 +157,7 @@ const certifications = [
 
 export default function Certifications() {
   return (
-    <section className="relative min-h-screen w-full bg-[#020617] py-32 px-6 flex flex-col items-center justify-center z-10">
+    <section id="certifications" className="realm-section" aria-labelledby="certifications-title">
       
       {/* Section Title */}
       <motion.div
@@ -165,16 +165,15 @@ export default function Certifications() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="text-center mb-16 w-full max-w-4xl"
+        className="mx-auto mb-16 w-full max-w-6xl"
       >
-        <h2 className="text-4xl md:text-5xl font-serif text-slate-200 mb-4">
-          Seals of <span className="text-blue-400">Mastery</span>
-        </h2>
-        <div className="h-1 w-24 bg-gradient-to-r from-transparent via-blue-400 to-transparent mx-auto" />
+        <p className="section-kicker">The seals</p>
+        <h2 id="certifications-title" className="section-title">Marks left by<br /><span className="text-amber-300">the learning.</span></h2>
+        <div className="section-rule" />
       </motion.div>
 
       {/* Certifications Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl w-full">
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-px border border-amber-200/15 bg-amber-200/15 md:grid-cols-2 lg:grid-cols-4">
         {certifications.map((cert, index) => (
           <motion.div
             key={index}
@@ -182,28 +181,28 @@ export default function Certifications() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true, margin: "-50px" }}
-            className={`group relative p-6 rounded-xl bg-slate-900/50 backdrop-blur-md border ${cert.glow} transition-all duration-300 flex flex-col h-full`}
+            className={`group relative flex h-full flex-col bg-[#142219] p-5 transition-all duration-300 hover:bg-[#1b2b1f] ${cert.glow}`}
           >
             {/* Ambient Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl pointer-events-none" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-amber-200/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             
             <div className="relative z-10 flex items-center mb-4">
-              <div className="p-3 bg-slate-950 rounded-lg border border-slate-800 mr-4">
+              <div className="mr-4 border border-amber-200/15 bg-[#0b1710] p-3 text-amber-200">
                 {cert.icon}
               </div>
             </div>
             
             <div className="relative z-10 flex-grow">
-              <h3 className="text-xl font-serif text-slate-200 mb-1 leading-snug">{cert.title}</h3>
-              <p className="text-sm font-sans text-emerald-400 mb-3">{cert.issuer}</p>
+              <h3 className="mb-1 font-serif text-lg leading-snug text-amber-100">{cert.title}</h3>
+              <p className="mb-3 font-sans text-sm text-emerald-200/70">{cert.issuer}</p>
             </div>
 
-            <div className="relative z-10 mt-auto pt-4 border-t border-slate-800/50">
-              <span className="text-xs font-sans text-slate-400 block tracking-wider">
+            <div className="relative z-10 mt-auto border-t border-amber-200/10 pt-4">
+              <span className="block font-sans text-xs tracking-wider text-amber-50/45">
                 {cert.date}
               </span>
               {cert.credentialId && (
-                <span className="text-xs font-sans text-slate-500 block truncate mt-1">
+                <span className="mt-1 block truncate font-sans text-xs text-amber-50/30">
                   ID: {cert.credentialId}
                 </span>
               )}

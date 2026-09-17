@@ -49,7 +49,7 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section className="relative min-h-screen w-full bg-[#020617] py-32 px-6 flex flex-col items-center z-10 overflow-hidden">
+    <section id="experience" className="realm-section overflow-hidden" aria-labelledby="experience-title">
       
       {/* Section Title */}
       <motion.div
@@ -57,18 +57,17 @@ export default function Experience() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="text-center mb-24 w-full max-w-4xl"
+        className="mx-auto mb-20 w-full max-w-6xl"
       >
-        <h2 className="text-4xl md:text-5xl font-serif text-slate-200 mb-4">
-          The Road <span className="text-emerald-500">Traveled</span>
-        </h2>
-        <div className="h-1 w-24 bg-gradient-to-r from-transparent via-emerald-500 to-transparent mx-auto" />
+        <p className="section-kicker">The journey</p>
+        <h2 id="experience-title" className="section-title">A trail of<br /><span className="text-amber-300">earned miles.</span></h2>
+        <div className="section-rule" />
       </motion.div>
 
       {/* Timeline Container */}
-      <div className="relative max-w-4xl w-full">
+      <div className="relative mx-auto w-full max-w-5xl">
         {/* The Glowing Center Line */}
-        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-slate-700 to-transparent transform md:-translate-x-1/2" />
+        <div className="absolute bottom-0 left-4 top-0 w-px bg-gradient-to-b from-transparent via-amber-300/35 to-transparent md:left-1/2 md:-translate-x-1/2" />
 
         {/* Timeline Items */}
         {experiences.map((exp, index) => (
@@ -78,12 +77,12 @@ export default function Experience() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true, margin: "-100px" }}
-            className={`relative flex flex-col md:flex-row items-center justify-between mb-16 w-full ${
+            className={`relative mb-12 flex w-full flex-col items-center justify-between md:flex-row ${
               index % 2 === 0 ? "md:flex-row-reverse" : ""
             }`}
           >
             {/* The Glowing Waypoint Marker */}
-            <div className="absolute left-4 md:left-1/2 w-10 h-10 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center transform -translate-x-1/2 md:-translate-x-1/2 z-20 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+            <div className="absolute left-4 z-20 flex h-9 w-9 -translate-x-1/2 transform items-center justify-center rounded-full border border-amber-300/60 bg-[#0b1710] text-amber-300 shadow-[0_0_20px_rgba(201,165,76,.15)] md:left-1/2 md:-translate-x-1/2">
               {exp.icon}
             </div>
 
@@ -91,22 +90,22 @@ export default function Experience() {
             <div className="hidden md:block w-[45%]" />
 
             {/* The Experience Card */}
-            <div className="w-full pl-12 md:pl-0 md:w-[45%]">
-              <div className={`group relative p-6 rounded-xl bg-slate-900/50 backdrop-blur-md border ${exp.glow} transition-all duration-500`}>
+            <div className="w-full pl-12 md:w-[45%] md:pl-0">
+              <div className={`group manuscript-panel relative p-6 transition-all duration-500 hover:-translate-y-1 ${exp.glow}`}>
                 {/* Inner ambient glow on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-200/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 
                 <div className="relative z-10">
-                  <span className="text-sm font-sans tracking-widest uppercase text-slate-400 mb-2 block">
+                  <span className="mb-2 block font-sans text-xs uppercase tracking-[.18em] text-amber-300/60">
                     {exp.date}
                   </span>
-                  <h3 className="text-2xl font-serif text-slate-100 mb-1">
+                  <h3 className="mb-1 font-serif text-2xl text-amber-100">
                     {exp.role}
                   </h3>
-                  <h4 className="text-lg font-sans text-emerald-400 mb-4">
+                  <h4 className="mb-4 font-sans text-lg text-emerald-200/75">
                     {exp.entity}
                   </h4>
-                  <p className="text-slate-300 font-sans leading-relaxed">
+                  <p className="font-sans leading-relaxed text-amber-50/60">
                     {exp.description}
                   </p>
                 </div>

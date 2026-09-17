@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ExternalLink, Code, Lock } from 'lucide-react'
+import Image from 'next/image'
 
 // Your expanded artifacts of creation
 const projects = [
@@ -108,7 +109,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative min-h-screen w-full bg-[#020617] py-32 px-6 flex flex-col items-center z-10">
+    <section id="projects" className="realm-section" aria-labelledby="projects-title">
       
       {/* Section Title */}
       <motion.div
@@ -116,16 +117,15 @@ export default function Projects() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="text-center mb-20 w-full max-w-6xl"
+        className="mx-auto mb-16 w-full max-w-6xl"
       >
-        <h2 className="text-4xl md:text-6xl font-serif text-slate-200 mb-4">
-          The Hall of <span className="text-yellow-500">Achievements</span>
-        </h2>
-        <div className="h-1 w-32 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-auto" />
+        <p className="section-kicker">The works</p>
+        <h2 id="projects-title" className="section-title">Things made for<br /><span className="text-amber-300">the living world.</span></h2>
+        <div className="section-rule" />
       </motion.div>
 
       {/* Magical Portals Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl w-full">
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <motion.div
             key={index}
@@ -133,61 +133,62 @@ export default function Projects() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: (index % 3) * 0.15 }}
             viewport={{ once: true, margin: "-50px" }}
-            className={`group relative flex flex-col p-6 rounded-2xl bg-gradient-to-b ${project.portalColor} backdrop-blur-xl border ${project.glowColor} transition-all duration-500 overflow-hidden`}
+            className={`group relative flex flex-col overflow-hidden border border-amber-200/15 bg-[#15251a] transition-all duration-500 hover:-translate-y-1 hover:border-amber-300/45 hover:shadow-[0_22px_60px_rgba(0,0,0,.25)] ${index === 0 ? 'md:col-span-2 lg:col-span-2 lg:grid lg:grid-cols-[1.1fr_1fr] lg:gap-8' : ''}`}
           >
             {/* The swirling mist inside the portal */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-amber-200/5 via-transparent to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100 pointer-events-none" />
 
             {/* Scrying Window (Project Image) */}
-            <div className="relative w-full h-48 mb-6 rounded-xl overflow-hidden border border-slate-700/50 bg-slate-900 flex items-center justify-center">
+            <div className={`relative w-full overflow-hidden border-b border-amber-200/15 bg-[#0b1710] ${index === 0 ? 'h-full min-h-64 border-b-0 lg:border-r' : 'mb-6 h-48'}`}>
               {/* Fallback pattern in case image is missing */}
-              <Code size={48} className="absolute text-slate-800" />
-              <img 
+              <Code size={48} className="absolute text-amber-200/10" />
+              <Image
                 src={project.image} 
                 alt={project.title} 
-                className="relative z-10 object-cover w-full h-full group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                fill
+                className="relative z-10 h-full w-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
                 onError={(e) => {
                   // Hide broken image icon if image doesn't exist yet
                   e.currentTarget.style.display = 'none';
                 }}
               />
               {/* Overlay shadow for blending */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent z-20" />
+              <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#0b1710]/85 via-transparent to-transparent" />
             </div>
 
-            <div className="relative z-30 flex-grow">
-              <span className="text-xs font-sans tracking-widest uppercase text-slate-400 mb-2 block">
+            <div className="relative z-30 flex-grow p-6 pt-0 lg:p-7">
+              <span className="mb-2 block font-sans text-[11px] uppercase tracking-[.2em] text-amber-300/60">
                 {project.category}
               </span>
-              <h3 className="text-2xl font-serif text-slate-100 mb-3 group-hover:text-yellow-400 transition-colors duration-300 leading-snug">
+              <h3 className="mb-3 font-serif text-2xl leading-snug text-amber-100 transition-colors duration-300 group-hover:text-amber-300">
                 {project.title}
               </h3>
-              <p className="text-slate-300 font-sans leading-relaxed text-sm mb-6">
+              <p className="mb-6 font-sans text-sm leading-relaxed text-amber-50/60">
                 {project.description}
               </p>
             </div>
 
             <div className="relative z-30 mt-auto">
-              <div className="flex flex-wrap gap-2 mb-6">
+              <div className="mb-6 flex flex-wrap gap-2">
                 {project.tech.map((tech, i) => (
-                  <span key={i} className="text-xs font-sans px-3 py-1 bg-slate-950/80 border border-slate-700 rounded-full text-slate-300">
+                  <span key={i} className="border border-amber-200/15 bg-[#0b1710]/60 px-2.5 py-1 font-sans text-[11px] text-amber-50/65">
                     {tech}
                   </span>
                 ))}
               </div>
               
-              <div className="flex gap-4 border-t border-slate-800/60 pt-4 mt-auto">
+              <div className="mt-auto flex gap-4 border-t border-amber-200/10 pt-4">
                 {project.isPrivate ? (
-                  <span className="flex items-center gap-2 text-sm font-sans text-slate-500 cursor-not-allowed">
+                    <span className="flex cursor-not-allowed items-center gap-2 font-sans text-sm text-amber-50/35">
                     <Lock size={16} /> Private Vault
                   </span>
                 ) : (
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-sans text-slate-400 hover:text-white transition-colors">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="ink-link flex items-center gap-2 font-sans text-sm text-amber-50/55">
                     <Code size={16} /> Source Runes
                   </a>
                 )}
                 {!project.isPrivate && (
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-sans text-slate-400 hover:text-yellow-400 transition-colors ml-auto">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="ink-link ml-auto flex items-center gap-2 font-sans text-sm text-amber-200/70">
                     Enter Portal <ExternalLink size={16} />
                   </a>
                 )}

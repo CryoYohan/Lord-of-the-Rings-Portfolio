@@ -31,7 +31,7 @@ export default function Contact() {
   }
 
   return (
-    <section className="relative min-h-screen w-full bg-[#020617] py-32 px-6 flex flex-col items-center justify-center z-10">
+    <section id="contact" className="realm-section border-t border-amber-200/10" aria-labelledby="contact-title">
       
       {/* Section Title */}
       <motion.div
@@ -39,15 +39,14 @@ export default function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="text-center mb-16 w-full max-w-4xl"
+        className="mx-auto mb-16 w-full max-w-6xl"
       >
-        <h2 className="text-4xl md:text-5xl font-serif text-slate-200 mb-4">
-          The Final <span className="text-yellow-500">Council</span>
-        </h2>
-        <div className="h-1 w-24 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-auto" />
+        <p className="section-kicker">The last page</p>
+        <h2 id="contact-title" className="section-title">Let&apos;s make the<br /><span className="text-amber-300">next thing useful.</span></h2>
+        <div className="section-rule" />
       </motion.div>
 
-      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-16 items-start">
+        <div className="mx-auto grid w-full max-w-6xl items-start gap-14 md:grid-cols-2">
         
         {/* Left Column: The Summoning Form */}
         <motion.div
@@ -55,37 +54,37 @@ export default function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: "-50px" }}
-          className="p-8 rounded-2xl bg-slate-900/40 border border-slate-700/50 backdrop-blur-md"
+          className="manuscript-panel p-8 md:p-10"
         >
-          <h3 className="text-2xl font-serif text-slate-200 mb-6">Send a Raven</h3>
+          <h3 className="mb-6 font-serif text-2xl text-amber-100">Send a message</h3>
           
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
-              <label className="text-sm font-sans text-slate-400 tracking-wider">NAME</label>
+              <label className="font-sans text-xs uppercase tracking-[.18em] text-amber-200/55">Name</label>
               <input 
                 type="text" 
                 required
-                className="w-full bg-slate-950/50 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 font-sans focus:outline-none focus:border-yellow-500/70 focus:shadow-[0_0_15px_rgba(251,191,36,0.2)] transition-all duration-300"
+                className="w-full border border-amber-200/15 bg-[#0b1710]/65 px-4 py-3 font-sans text-amber-50 outline-none transition-all duration-300 placeholder:text-amber-50/25 focus:border-amber-300/70 focus:ring-1 focus:ring-amber-300/30"
                 placeholder="Enter your name"
               />
             </div>
             
             <div className="space-y-2">
-              <label className="text-sm font-sans text-slate-400 tracking-wider">EMAIL</label>
+              <label className="font-sans text-xs uppercase tracking-[.18em] text-amber-200/55">Email</label>
               <input 
                 type="email" 
                 required
-                className="w-full bg-slate-950/50 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 font-sans focus:outline-none focus:border-yellow-500/70 focus:shadow-[0_0_15px_rgba(251,191,36,0.2)] transition-all duration-300"
+                className="w-full border border-amber-200/15 bg-[#0b1710]/65 px-4 py-3 font-sans text-amber-50 outline-none transition-all duration-300 placeholder:text-amber-50/25 focus:border-amber-300/70 focus:ring-1 focus:ring-amber-300/30"
                 placeholder="Enter your email"
               />
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-sans text-slate-400 tracking-wider">MESSAGE</label>
+              <label className="font-sans text-xs uppercase tracking-[.18em] text-amber-200/55">Message</label>
               <textarea 
                 required
                 rows={5}
-                className="w-full bg-slate-950/50 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 font-sans focus:outline-none focus:border-yellow-500/70 focus:shadow-[0_0_15px_rgba(251,191,36,0.2)] transition-all duration-300 resize-none"
+                className="w-full resize-none border border-amber-200/15 bg-[#0b1710]/65 px-4 py-3 font-sans text-amber-50 outline-none transition-all duration-300 placeholder:text-amber-50/25 focus:border-amber-300/70 focus:ring-1 focus:ring-amber-300/30"
                 placeholder="Speak your mind..."
               />
             </div>
@@ -95,8 +94,8 @@ export default function Contact() {
               disabled={isSubmitting || isSent}
               className={`w-full py-4 rounded-lg flex items-center justify-center gap-2 font-serif tracking-wider transition-all duration-500 ${
                 isSent 
-                  ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/50 shadow-[0_0_20px_rgba(16,185,129,0.3)]" 
-                  : "bg-yellow-500/10 border border-yellow-500/50 text-yellow-500 hover:bg-yellow-500 hover:text-slate-950 hover:shadow-[0_0_25px_rgba(251,191,36,0.5)]"
+                ? "border border-emerald-300/50 bg-emerald-300/15 text-emerald-200" 
+                : "border border-amber-300/70 bg-amber-300 px-4 text-[#172016] hover:bg-amber-100"
               }`}
             >
               {isSubmitting ? (
@@ -124,8 +123,8 @@ export default function Contact() {
           viewport={{ once: true, margin: "-50px" }}
           className="flex flex-col justify-center h-full"
         >
-          <p className="text-slate-300 font-sans leading-relaxed mb-10 text-lg">
-            Prefer direct channels? The portals below are always open for new quests, alliances, and technical discussions.
+            <p className="mb-10 font-sans text-lg leading-relaxed text-amber-50/65">
+            Prefer a direct path? The portals below are open for new quests, thoughtful collaborations, and technical discussions.
           </p>
 
           <div className="grid grid-cols-2 gap-6">
@@ -135,12 +134,12 @@ export default function Contact() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group flex flex-col items-center justify-center p-8 rounded-xl bg-slate-900/30 border border-slate-800 transition-all duration-300 ${link.border}`}
+                className={`group flex flex-col items-center justify-center border border-amber-200/15 bg-[#142219]/70 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-amber-300/55 ${link.border}`}
               >
-                <div className={`mb-4 text-slate-400 transition-colors duration-300 ${link.color}`}>
+                <div className={`mb-4 text-amber-200/55 transition-colors duration-300 ${link.color}`}>
                   {link.icon}
                 </div>
-                <span className="font-serif text-slate-200 tracking-widest text-sm uppercase">
+                <span className="font-serif text-sm uppercase tracking-[.18em] text-amber-100/80">
                   {link.name}
                 </span>
               </a>
