@@ -23,6 +23,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "The Realm of Ar-Cryoyohan",
   description: "The digital portfolio of Cyril John T. Ypil, a data-driven strategist, proactive problem solver, and Magna Cum Laude IT graduate.",
+  icons: {
+    icon: "/elessar-icon.jpeg",
+  },
 };
 
 export default function RootLayout({
